@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="cronofy-slot-picker"></div>
+<script src="https://elements.cronofy.com/js/CronofyElements.v1.51.0.js"></script>
+<script>
+    CronofyElements.SlotPicker({
+        element_token: "{ELEMENT_TOKEN}",
+        target_id: "cronofy-slot-picker",
+        availability_query: {
+            participants: [
+                {
+                    required: "all",
+                    members: [
+                        { sub: "acc_12345678" },
+                        { sub: "acc_87654321" }
+                    ]
+                }
+            ],
+            required_duration: { minutes: 30 },
+            query_periods: [
+                { start: "2022-10-04T09:00:00Z", end: "2022-10-04T17:00:00Z" },
+                { start: "2022-10-05T09:00:00Z", end: "2022-10-05T17:00:00Z" }
+            ]
+        },
+        styles: {
+            prefix: "custom-name"
+        },
+        callback: notification => console.log("callback", notification)
+    });
+</script>
+</body>
+</html>

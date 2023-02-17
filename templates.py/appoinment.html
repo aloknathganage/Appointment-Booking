@@ -1,0 +1,159 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Book appoinment</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link href="{% static 'https://fonts.googleapis.com/css?family=Roboto:300,400,700' %}" rel="stylesheet"> 
+
+    <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
+    <link rel="stylesheet" href="{% static 'css/animate.css' %}">
+    <link rel="stylesheet" href="{% static 'css/owl.carousel.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/magnific-popup.css' %}">
+
+    <link rel="stylesheet" href="{% static 'fonts/ionicons/css/ionicons.min.css' %}">
+    <link rel="stylesheet" href="{% static 'fonts/fontawesome/css/font-awesome.min.css' %}">
+    <link rel="stylesheet" href="{% static 'fonts/flaticon/font/flaticon.css' %}">
+    
+
+    <!-- Theme Style -->
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+  </head>
+  <body>
+    <h6 style="background-color: black;"><span style="font-size: 250%;" style="border-radius: 20%;"><i style="color:white">The Bombey Salon</i></span></h6>
+    <!-- <section class="quick-info element-animate" data-animate-effect="fadeInLeft">
+        <div class="container">
+        <div class="row">
+            <div class="col-lg-8 bgcolor">
+            <div class="row">
+                <div class="col-md-4 mb-3">
+                <div class="media">
+                    <div class="mr-3 icon-wrap"><span class="icon ion-ios-telephone"></span></div>
+                    <div class="media-body">
+                    <h5>+1 234 5633 342</h5>
+                    <p>Call us 24/7 we will get back to you ASAP</p>
+                    </div>
+                </div>
+                </div>
+                <div class="col-md-4 mb-3">
+                <div class="media">
+                    <div class="mr-3 icon-wrap"><span class="icon ion-location"></span></div>
+                    <div class="media-body">
+                    <h5>249 Division Rad</h5>
+                    <p>Fake st. New York, New York City,  PO 2923 USA</p>
+                    </div>
+                </div>
+                </div>
+                <div class="col-md-4 mb-3">
+                <div class="media">
+                    <div class="mr-3 icon-wrap"><span class="icon ion-android-time"></span></div>
+                    <div class="media-body">
+                    <h5>Daily: 8 am - 10 pm</h5>
+                    <p>Mon-Fri, Sunday <br> Saturday: Closed</p>
+                    </div>
+                </div>
+                </div>
+            </div>
+            </div>
+        </div>
+        </div>
+    </section> -->
+    <!-- END section -->
+    <section class="site-section" style="background-color: rgb(153, 153, 153);" >
+        <div class="container">
+          <p style="color: black;"><b>Appoint Details-</b></p>
+        <div class="row">
+            <div class="col-md-12" style="color: black;">
+            {% block content %}
+              <form action="appoinment" method="POST">
+              
+                {% csrf_token %}
+                      <div class="col">
+                      <div class="col-md-4 form-group">
+                          <label for="Name"><b>Name</b></label>
+                          <input required type="text" id="Name" class="form-control " name="Name">
+                      </div>
+                      <div class="col-md-4 form-group">
+                          <label for="Age"><B>Age</B></label>
+                          <input required type="number" id="Age" class="form-control " name="Age">
+                      </div>
+                      <div class="col-md-4 form-group">
+                        <label for="Gender"><B>Gender  </B></label><br>
+                        <input required type="radio" name="Gender" value="0"> Male
+                        <input required type="radio" name="Gender" value="1"> Female	
+                    </div>
+                      <div class="col-md-4 form-group">
+                          <label for="Phone"><B>Phone</B></label>
+                          <input required type="number" id="Phone" class="form-control" name="Phone">
+                        
+                      </div>
+                      <div class="col-md-4 form-group">
+                          <label for="DateTime"><b>Date & Time</b></label>
+                          <input required type="datetime-local" id="DateTime" class="form-control " name="DateTime">
+                      </div>
+                      </div>
+                      
+                      <div class="row">
+                      <div class="col-md-12 form-group">
+                          <label for="Message">Message</label>
+                          <textarea required name="Message" id="Message" name="Message" class="form-control " cols="10" rows="4"></textarea>
+                      </div>
+                      </div>
+                      <div class="row">
+                      <div class="col-md-6 form-group">
+                          <input type="submit" value="Schedule" class="btn btn-primary">
+                      </div>
+                      </div>
+              </form>
+              {% endblock %} 
+          </div>
+        </div>
+        </div>
+    </section>
+    <footer class="site-footer" style="background-color: rgb(215, 200, 250);" style="border-radius: 10%;">
+        <div class="container" style="color: black;">
+          <div class="row mb-5">
+            <div class="col-md-4">
+              <h3 class="mb-4"><span><b>ABOUT</b></span></h3>
+              <p class="mb-4">35+ experience will provide you the best Services</p>
+              <ul class="list-unstyled ">
+                <li class="d-flex"><span class="mr-3"><span class="icon ion-ios-location"></span></span><span class="">Main Road, Vill. Bahadarpur, Dist Burhanpur,  PO 450331 IND</span></li>
+                <li class="d-flex"><span class="mr-3"><span class="icon ion-ios-telephone"></span></span><span class="">+91 97135 11667</span></li>
+                <li class="d-flex"><span class="mr-3"><span class="icon ion-email"></span></span><span class="">thebombeysalon@gmail.com</span></li>
+              </ul>
+            </div>
+            <!-- <div class="col-md-2">
+              <h3 class="mb-4"><span><b>LINKS</b></span></h3>
+              <ul class="list-unstyled ">
+                <li><a href="#"><b>About</b></a></li>
+                <li><a href="#"><b>Hairstyle</b></a></li>
+                <li><a href="#"><b>Contact</b></a></li>
+              </ul>
+            </div> -->
+            <div class="col-md-3">
+              <h3><span><b>CONNECT :</b></span><br>
+                <br><a href="#" class="p-2"><span class="fa fa-facebook"></span></a><br>
+                <br><a href="#" class="p-2"><span class="fa fa-twitter"></span></a><br>
+                <br><a href="#" class="p-2"><span class="fa fa-instagram"></span></a>
+              </h3>
+            </div>
+            <!-- <div class="col-md-3">
+              <h3><span><b>Feedback</b></span><br>
+                <br><textarea name="Feedback"></textarea>
+              </h3>
+            </div> -->
+          </div>
+          <div class="row justify-content-center">
+            <div class="col-md-7 text-center">
+              <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+  Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is developed by Aloknath G.
+  <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+
+            </div>
+          </div>
+        </div>
+      </footer>
+      <!-- END footer -->
+</body>
